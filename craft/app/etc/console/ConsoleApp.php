@@ -4,8 +4,6 @@ namespace Craft;
 /**
  * Class ConsoleApp
  *
- * @mixin AppBehavior
- *
  * @author    Pixel & Tonic, Inc. <support@pixelandtonic.com>
  * @copyright Copyright (c) 2014, Pixel & Tonic, Inc.
  * @license   http://craftcms.com/license Craft License Agreement

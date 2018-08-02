@@ -7,21 +7,31 @@
  * You can see a list of the default settings in craft/app/etc/config/defaults/db.php
  */
 
-return array(
+$database = [
+    'tablePrefix' => 'craft',
+];
 
-	// The database server name or IP address. Usually this is 'localhost' or '127.0.0.1'.
-	'server' => '127.0.0.1',
+switch (ENV) {
+    case 'live':
+        $database['server'] = 'ID142026_intabbp.db.webhosting.be';
+        $database['user'] = 'ID142026_intabbp';
+        $database['password'] = '543(A9V20)e50w!z';
+        $database['database'] = 'ID142026_intabbp';
+        break;
 
-	// The name of the database to select.
-	'database' => 'intabb',
+    case 'staging':
+        $database['server'] = 'ID142026_intabbs.db.webhosting.be';
+        $database['user'] = 'ID142026_intabbs';
+        $database['password'] = '543(A9V20)e50w!z';
+        $database['database'] = 'ID142026_intabbs';
+        break;
 
-	// The database username to connect with.
-	'user' => 'root',
+    default:
+        $database['server'] = '127.0.0.1';
+        $database['user'] = 'root';
+        $database['password'] = 'root';
+        $database['database'] = PROJECTCODE;
+        break;
+}
 
-	// The database password to connect with.
-	'password' => 'root',
-
-	// The prefix to use when naming tables. This can be no more than 5 characters.
-	'tablePrefix' => 'craft',
-
-);
+return $database;

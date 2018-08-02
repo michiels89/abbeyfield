@@ -7,27 +7,62 @@
  * You can see a list of the default settings in craft/app/etc/config/defaults/general.php
  */
 
-return array(
+if (!defined('PROJECTCODE')) {
+    define('PROJECTCODE', strtolower('intabb'));
+}
 
-	// Base site URL
-	'siteUrl' => null,
+if (!defined('ENV')) {
+    switch (__DIR__) {
+        case '/data/sites/web/'.PROJECTCODE.'livestatikbe/subsites/'.PROJECTCODE.'.live.statik.be/public';
+        case '/data/sites/web/'.PROJECTCODE.'livestatikbe/subsites/'.PROJECTCODE.'.live.statik.be/craft/config';
+        case '/data/sites/web/'.PROJECTCODE.'livestatikbe/www';
+            define('ENV', 'live');
+            break;
 
-	// Environment-specific variables (see https://craftcms.com/docs/multi-environment-configs#environment-specific-variables)
-	'environmentVariables' => array(),
+        case '/data/sites/web/'.PROJECTCODE.'livestatikbe/subsites/'.PROJECTCODE.'.staging.statik.be/public';
+        case '/data/sites/web/'.PROJECTCODE.'livestatikbe/subsites/'.PROJECTCODE.'.staging.statik.be/craft/config';
+            define('ENV', 'staging');
+            break;
 
-	// Default Week Start Day (0 = Sunday, 1 = Monday...)
-	'defaultWeekStartDay' => 0,
+        default:
+            define('ENV', 'local');
+            break;
+    }
+}
 
-	// Enable CSRF Protection (recommended, will be enabled by default in Craft 3)
-	'enableCsrfProtection' => true,
+$settings = [
+    'defaultCpLanguage' => 'en_be',
+    'verificationCodeDuration' => 'P1W',
+    'useEmailAsUsername' => true,
+    'defaultWeekStartDay' => 1,
+    'enableCsrfProtection' => true,
+    'omitScriptNameInUrls' => true,
+    'addTrailingSlashesToUrls' => false,
+    'defaultSearchTermOptions' => array(
+        'subLeft' => true,
+        'subRight' => true,
+    ),
+    'environmentVariables' => [
+        'basePath' => $_SERVER['DOCUMENT_ROOT'],
+        'baseUrl' => strtolower((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https://' : 'http://') . $_SERVER['SERVER_NAME']),
+    ],
+    'siteUrl' => [
+        'en_be' => strtolower((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https://' : 'http://') . $_SERVER['SERVER_NAME']),
+    ],
+];
 
-	// Whether "index.php" should be visible in URLs (true, false, "auto")
-	'omitScriptNameInUrls' => 'auto',
+switch (ENV) {
+    case 'live':
+        $settings['devMode'] = false;
+        break;
 
-	// Control Panel trigger word
-	'cpTrigger' => 'admin',
+    case 'staging':
+        $settings['devMode'] = true;
+        break;
 
-	// Dev Mode (see https://craftcms.com/support/dev-mode)
-	'devMode' => false,
+    default:
+        $settings['devMode'] = true;
+        break;
+}
 
-);
+return $settings;

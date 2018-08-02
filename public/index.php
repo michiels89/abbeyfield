@@ -2,6 +2,7 @@
 
 // Path to your craft/ folder
 $craftPath = '../craft';
+define('CRAFT_LOCALE', 'nl_be');
 
 // Do not edit below this line
 $path = rtrim($craftPath, '/').'/app/index.php';
