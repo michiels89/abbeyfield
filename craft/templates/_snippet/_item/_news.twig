@@ -1,13 +1,37 @@
-<div class="grid__item">
-    <a href="{{ newsEntry.getUrl() }}" class="card card--news">
-        {% if newsEntry.overviewImage|length %}
-            <div class="card__img">
-                {{ assets.renderSrcset(newsEntry.overviewImage, 'grid__4') }}
-            </div>
+<div class="grid__item container">
+    {% if image is defined %}
+        <div class=" grid ">
+            <div class="grid__12 grid--bp-med__2">
+                {% if newsEntry.overviewImage|length %}
+                    <div class="card__img">
+                         <a href="{{ newsEntry.getUrl() }}" class="card card--news">
+                              {{ assets.renderSrcset(newsEntry.overviewImage, 'grid__2') }}
+                         </a>
+                    </div>
+                {% endif %}
+             </div>
+    {% endif %}
+
+        {% if image is defined %}
+            <div class="grid__12 grid--bp-med__8">
         {% endif %}
-        <div class="card__main">
-            <div class="card__meta">{{ newsEntry.postDate.format('d.m.Y') }}</div>
-            <h3 class="card__title">{{ newsEntry.overviewTitle ? newsEntry.overviewTitle : newsEntry.title }}</h3>
+                <div class="card__main ">
+                    <a href="{{ newsEntry.getUrl() }}" class="card card--news">
+                        {#<div class="card__meta">{{ newsEntry.postDate.format('d.m.Y') }}</div>#}
+                        <h4 class="card__title">{{ newsEntry.overviewTitle ? newsEntry.overviewTitle : newsEntry.title }}</h4>
+                            {% if image is defined %}
+                                <p>
+                                    {{ newsEntry.overviewDescription ? newsEntry.overviewDescription : newsEntry.overviewDescription}}
+                                    <a href="#"> Lees meer ... </a>
+                                </p>
+                            {% endif %}
+                     </a>
+                </div>
+        {% if image is defined %}
+            </div>
         </div>
-    </a>
+    {% endif %}
 </div>
+
+
+{#{{ assets.renderFocusSrcset(newsEntry.overviewImage, 'news')}}#}

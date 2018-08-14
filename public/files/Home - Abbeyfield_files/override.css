@@ -1,0 +1,7 @@
+/* VERY SIMPLE IMAGE GALLERY */
+.vsig_top img {border:0px !important}
+.vsig_thumb img {border:0px !important}
+
+SECTION.content .contact_holder .contacts > DIV {
+  width: 33%;
+}

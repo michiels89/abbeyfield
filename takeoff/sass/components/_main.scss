@@ -1,0 +1,47 @@
+.page-main{
+
+  width: 100%;
+  max-width: 1250px;
+  margin: auto;
+
+}
+
+//Homepage
+
+.homepage{
+  h2{
+    color: #eb6d12;
+    
+  }
+  .testimony{
+    background-color: #eb6d12;
+    padding: 30px;
+    color: #fff;
+    display: block;
+    white-space: normal;
+    font-size: 1.1em;
+  }
+
+  span{
+    width: 0px;
+    height: 0px;
+    display: inline-block;
+    border: solid 20px #eb6d12;
+    border-color: #eb6d12 transparent transparent transparent;
+    margin-left: 30px;
+    display: block;
+    margin-bottom: -10px;
+  }
+}
+
+//About
+
+.about{
+
+  h1, h2{
+    color: $color-primary;
+
+  }
+
+}
+

@@ -1,0 +1,35 @@
+{% extends "_layout" %}
+{% import '_macro/_assets' as assets %}
+
+{% set breadcrumbs = [
+    craft.entries.section('inhabitants').first(),
+    entry,
+] %}
+
+{% block content %}
+    <div class="container about">
+        <div class="grid">
+            <div class="grid__12 grid--bp-med__3">
+                {{ craft.amNav.getNav("assidebewoners") }}
+            </div>
+            <div class="grid__12 grid--bp-med__9">
+            <div class="section section--default">
+                <div class="container">
+                    {% include '_snippet/_content/_pageTitle' %}
+                    {% include '_snippet/_content/_intro' %}
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="container ">
+                    <div>
+                        {% include '_snippet/_content/_contentBuilder' %}
+
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -3,20 +3,24 @@
 
 
 {% block breadcrumbs %}{% endblock %}
+{% block hero %}
+    {% include '_snippet/_content/_hero' %}
+{% endblock %}
 
 {% block content %}
-    {% include '_snippet/_content/_hero' %}
-
-    {% set news = craft.entries().section('news').order('postDate DESC').limit(3) %}
+    {% set news = craft.entries().section('news').order('postDate DESC').limit(5) %}
     {% set otherNews = craft.entries().section('news').order('postDate DESC').id('not ' ~ entry.id) %}
-
     {% if news|length %}
         <div class="section section--default section--border-top">
             <div class="container">
                 <div class="section__content">
-                    <div class="block">
-                        <h2 class="spacer">{{ 'Laatste nieuws'|t }}</h2>
-                        <div class="spacer--xsm grid grid--bp-med-3-col">
+                    <div class="block homepage">
+                        {% include '_snippet/_content/_titel' %}
+                         <div class="introHome">
+                            {% include '_snippet/_content/_intro' %}
+                         </div>
+                        <h2 class="spacer">{{ 'Nieuws'|t }}</h2>
+                        <div class="spacer--xsm grid grid--bp-med-1-col">
     {% endif %}
 
     {% for newsEntry in news %}
@@ -28,9 +32,9 @@
 
                         {% set overview = craft.entries.section('newsOverview').first() %}
 
-                        {% if overview and otherNews|length > 3 %}
-                            <div class="spacer--xlr text--center">
-                                <a href="{{ overview.url }}" class="btn">{{ "Meer nieuws"|t }}</a>
+                        {% if overview and otherNews|length > 5 %}
+                            <div class="spacer--xlr ">
+                                <a href="{{ overview.url }}" class="btn">{{ "Alle nieuws"|t }}</a>
                             </div>
                         {% endif %}
                     </div>
@@ -38,4 +42,8 @@
             </div>
         </div>
     {% endif %}
+    <div class="homepage">
+        {% include '_snippet/_content/_contentBuilder' with {'text' : true} %}
+    </div>
 {% endblock %}
+

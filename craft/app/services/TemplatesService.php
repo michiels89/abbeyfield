@@ -853,7 +853,7 @@ class TemplatesService extends BaseApplicationComponent
 	 * - TemplateName.html
 	 * - TemplateName.twig
 	 * - TemplateName/index.html
-	 * - TemplateName/index.twig
+	 * - TemplateName/_entry.twig
 	 *
 	 * If this is a front-end request, the actual list of file extensions and index filenames are configurable via the
 	 * [defaultTemplateExtensions](http://craftcms.com/docs/config-settings#defaultTemplateExtensions) and
@@ -894,12 +894,12 @@ class TemplatesService extends BaseApplicationComponent
 	 *     - craft/templates/LocaleID/foo/bar.html
 	 *     - craft/templates/LocaleID/foo/bar.twig
 	 *     - craft/templates/LocaleID/foo/bar/index.html
-	 *     - craft/templates/LocaleID/foo/bar/index.twig
+	 *     - craft/templates/LocaleID/foo/bar/_entry.twig
 	 *     - craft/templates/foo/bar
 	 *     - craft/templates/foo/bar.html
 	 *     - craft/templates/foo/bar.twig
 	 *     - craft/templates/foo/bar/index.html
-	 *     - craft/templates/foo/bar/index.twig
+	 *     - craft/templates/foo/bar/_entry.twig
 	 *
 	 * - Control Panel requests:
 	 *
@@ -907,12 +907,12 @@ class TemplatesService extends BaseApplicationComponent
 	 *     - craft/app/templates/foo/bar.html
 	 *     - craft/app/templates/foo/bar.twig
 	 *     - craft/app/templates/foo/bar/index.html
-	 *     - craft/app/templates/foo/bar/index.twig
+	 *     - craft/app/templates/foo/bar/_entry.twig
 	 *     - craft/plugins/foo/templates/bar
 	 *     - craft/plugins/foo/templates/bar.html
 	 *     - craft/plugins/foo/templates/bar.twig
 	 *     - craft/plugins/foo/templates/bar/index.html
-	 *     - craft/plugins/foo/templates/bar/index.twig
+	 *     - craft/plugins/foo/templates/bar/_entry.twig
 	 *
 	 * @param string $name The name of the template.
 	 *

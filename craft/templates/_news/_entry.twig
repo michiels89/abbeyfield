@@ -12,7 +12,7 @@
         <div class="container">
             {% include '_snippet/_content/_pageTitle' %}
 
-            <div>{{ entry.postDate.format('d.m.Y') }}</div>
+            {#<div>{{ entry.postDate.format('d.m.Y') }}</div>#}
 
             {% include '_snippet/_content/_intro' %}
             {% include '_snippet/_content/_socialShare' %}
@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    {% set news = craft.entries().section('news').order('postDate DESC').limit(3).id('not ' ~ entry.id) %}
+    {% set news = craft.entries().section('news').order('postDate DESC').limit(5).id('not ' ~ entry.id) %}
     {% set otherNews = craft.entries().section('news').order('postDate DESC').id('not ' ~ entry.id) %}
 
     {% if news|length %}
@@ -41,8 +41,8 @@
             <div class="container">
                 <div class="section__content">
                     <div class="block">
-                        <h2 class="spacer">{{ 'Ander nieuws'|t }}</h2>
-                        <div class="spacer--xsm grid grid--bp-med-3-col">
+                        <div class="spacer--xsm grid grid--bp-med-1-col">
+                            <h2 class="spacer">{{ 'Alle nieuws'|t }}</h2>
     {% endif %}
 
     {% for newsEntry in news %}
@@ -54,9 +54,9 @@
 
                         {% set overview = craft.entries.section('newsOverview').first() %}
 
-                        {% if overview and otherNews|length > 3 %}
+                        {% if overview and otherNews|length > 5 %}
                             <div class="spacer--xlr text--center">
-                                <a href="{{ overview.url }}" class="btn">{{ "Meer nieuws"|t }}</a>
+                                <a href="{{ overview.url }}" class="btn">{{ "Nieuws"|t }}</a>
                             </div>
                         {% endif %}
                     </div>

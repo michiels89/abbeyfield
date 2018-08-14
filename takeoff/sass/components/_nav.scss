@@ -35,11 +35,40 @@
     }
   } // end .--service
 
-  &--main {
+  &--top {
     @extend %ext-default-nav;
     @extend %ext-horizontal-nav;
     position: relative;
     float: right;
+    display: none;
+    li {
+      margin: 0 $rh-sml;
+      font: bold 20px sans-serif;
+    }
+    a {
+      @include link-variant($color-text, $color-primary);
+      color: #012b5f;
+      display: block;
+      padding: $rh-xxs 0;
+      background-image: linear-gradient(to right, $color-primary, $color-primary);
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      background-size: 0 2px;
+      &:hover,
+      &:focus,
+      &.active {
+        background-size: 100% 2px;
+      }
+    }
+    @include breakpoint($breakpoint-flyout) {
+      display: block;
+    };
+  } // end .--top
+  &--main {
+    @extend %ext-default-nav;
+    @extend %ext-horizontal-nav;
+    position: relative;
+    float: left;
     display: none;
     li {
       margin: 0 $rh-sml;

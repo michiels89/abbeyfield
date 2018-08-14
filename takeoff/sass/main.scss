@@ -51,3 +51,64 @@
 
 // Print
 @import 'core/print';
+
+// Banner homepage
+
+.hero__title{
+  background-color: #012b5f;
+  //background: rgba(23, 70, 123, 0.95);
+  padding: 25px 35px;
+  font-weight: 400;
+  display: inline-block;
+  font-size: 2.4em;
+  margin: 0 50px;
+  color: #fff;
+
+}
+.hero__body{
+
+  background-color: #eb6d12;
+  //background: rgba(233, 93, 15, 0.95);
+  max-width: 470px;
+  padding: 20px;
+  padding-top: 25px;
+  margin: 0 50px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #fff;
+  overflow: auto;
+  a{
+    color:#fff;
+    text-decoration: none;
+    background-color: #012b5f;
+    text-transform: uppercase;
+    padding: 8px 25px;
+  }
+
+}
+
+
+//Nieuws overzicht
+.news:first-child{
+  border-top: 1px solid lightgrey;
+}
+
+.news .grid__item{
+  border-bottom: 1px solid lightgrey;
+
+  .card__img img{
+
+    //width:10%;
+    //height: auto;
+    border-radius: 50%;
+  }
+
+}
+
+
+
+
+
+
+

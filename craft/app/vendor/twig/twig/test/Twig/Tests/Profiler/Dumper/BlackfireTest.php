@@ -21,11 +21,11 @@ cost-dimensions: wt mu pmu
 request-start: %d.%d
 
 main()//1 %d %d %d
-main()==>index.twig//1 %d %d %d
-index.twig==>embedded.twig::block(body)//1 %d %d 0
-index.twig==>embedded.twig//2 %d %d %d
+main()==>_entry.twig//1 %d %d %d
+_entry.twig==>embedded.twig::block(body)//1 %d %d 0
+_entry.twig==>embedded.twig//2 %d %d %d
 embedded.twig==>included.twig//2 %d %d %d
-index.twig==>index.twig::macro(foo)//1 %d %d %d
+_entry.twig==>_entry.twig::macro(foo)//1 %d %d %d
 EOF
         , $dumper->dump($this->getProfile()));
     }

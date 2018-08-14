@@ -20,10 +20,11 @@
     {% paginate entries.limit(12) as pageInfo, news %}
 
     <div class="section">
-        <div class="container">
-            <div class="grid grid--bp-sml-2-col grid--bp-lrg-3-col spacer">
+        <div class="container ">
+            <div class="news">
                 {% for newsEntry in news %}
-                    {% include '_snippet/_item/_news' %}
+                    {% include '_snippet/_item/_news' with {'image': true} %}
+                    {#{% include '_snippet/_item/_news' %}#}
                 {% endfor %}
             </div>
 

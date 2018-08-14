@@ -1,10 +1,41 @@
-{% if craft.amNav.getNavRaw("doormatNav") is defined %}
-    <nav class="nav nav--doormat">
-        <ul>
-            {% set nav = craft.amNav.getNavRaw("doormatNav") %}
-            {% for node in nav %}
-                <li><a href="{{ node.url }}" class="{{ globalMacro.is_active(node.url) }}" {% if node.blank %} target="_blank"{% endif %}>{{ node.name }}</a></li>
-            {% endfor %}
-        </ul>
-    </nav>
+{% if craft.amNav.getNavRaw("asside") is defined %}
+    <div class="container">
+        <nav class="nav nav--doormat grid " style="margin:auto;" >
+            <div class="grid__12 grid--bp-med__3">
+                <div class="spacer">
+                    <ul>
+                        {% set nav = craft.amNav.getNavRaw("asside") %}
+                        {% for node in nav %}
+                            <li><a href="{{ node.url }}" class="{{ globalMacro.is_active(node.url) }}" {% if node.blank %} target="_blank"{% endif %}>{{ node.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="grid__12 grid--bp-med__3">
+            <ul>
+                {% set nav = craft.amNav.getNavRaw("asside") %}
+                {% for node in nav %}
+                    <li><a href="{{ node.url }}" class="{{ globalMacro.is_active(node.url) }}" {% if node.blank %} target="_blank"{% endif %}>{{ node.name }}</a></li>
+                {% endfor %}
+            </ul>
+            </div>
+            <div class="grid__12 grid--bp-med__3">
+            <ul>
+                {% set nav = craft.amNav.getNavRaw("asside") %}
+                {% for node in nav %}
+                    <li><a href="{{ node.url }}" class="{{ globalMacro.is_active(node.url) }}" {% if node.blank %} target="_blank"{% endif %}>{{ node.name }}</a></li>
+                {% endfor %}
+            </ul>
+            </div>
+            <div class="grid__12 grid--bp-med__3">
+                <form action="" method="post">
+                    <input type="email" placeholder="Email Address"><br><br>
+                    <input type="text" placeholder="First Name"><br><br>
+                    <input type="text" placeholder="Last Name"><br><br>
+                    <input type="submit" value="Inschrijven Nieuwsbrief">
+                </form>
+                {#{% include '_snippet/_content/_socialMedia' %}#}
+            </div>
+        </nav>
+    </div>
 {% endif %}

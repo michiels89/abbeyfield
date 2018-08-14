@@ -1,46 +1,127 @@
-{% macro renderSrcset(image, transform) %}
-    {% set transforms = {
-    'grid__2': { mode: 'fit', width: 200, quality: 100, },
-    'grid__4': { mode: 'fit', width: 400, quality: 100, },
-    'grid__6': { mode: 'fit', width: 700, quality: 100, },
-    'grid__8': { mode: 'fit', width: 800, quality: 100, },
-    'grid__12': { mode: 'fit', width: 1400, quality: 100, },
-    } %}
+{#{% macro renderSrcset(image, transform) %}#}
+    {#{% set transforms = {#}
+    {#'grid__2': { mode: 'fit', width: 200, quality: 100, },#}
+    {#'grid__4': { mode: 'fit', width: 400, quality: 100, },#}
+    {#'grid__6': { mode: 'fit', width: 700, quality: 100, },#}
+    {#'grid__8': { mode: 'fit', width: 800, quality: 100, },#}
+    {#'grid__12': { mode: 'fit', width: 1400, quality: 100, },#}
+    {#} %}#}
 
-    {% set breakPointTransforms = {
-    440: { mode: 'fit', width: 440, quality: 100, },
-    660: { mode: 'fit', width: 660, quality: 100, },
-    820: { mode: 'fit', width: 820, quality: 100, },
-    980: { mode: 'fit', width: 980, quality: 100, },
-    1440: { mode: 'fit', width: 1400, quality: 100, },
-    } %}
+    {#{% set breakPointTransforms = {#}
+    {#440: { mode: 'fit', width: 440, quality: 100, },#}
+    {#660: { mode: 'fit', width: 660, quality: 100, },#}
+    {#820: { mode: 'fit', width: 820, quality: 100, },#}
+    {#980: { mode: 'fit', width: 980, quality: 100, },#}
+    {#1440: { mode: 'fit', width: 1400, quality: 100, },#}
+    {#} %}#}
 
     {# xxs: 320px, xsm: 440px, sml: 660px, med: 820px, lrg: 980px, xlr: 1200px #}
-    {% set sizes = {
-    'grid__2': '(min-width: 660px) 13vw, 100vw',
-    'grid__4': '(min-width: 660px) 33vw, 100vw',
-    'grid__6': '(min-width: 660px) and (max-width: 2500px) 50vw, , 100vw',
-    'grid__8': '(min-width: 660px) 75vw, 100vw',
-    'grid__12': '100vw',
-    } %}
+    {#{% set sizes = {#}
+    {#'grid__2': '(min-width: 660px) 13vw, 100vw',#}
+    {#'grid__4': '(min-width: 660px) 33vw, 100vw',#}
+    {#'grid__6': '(min-width: 660px) and (max-width: 2500px) 50vw, , 100vw',#}
+    {#'grid__8': '(min-width: 660px) 75vw, 100vw',#}
+    {#'grid__12': '100vw',#}
+    {#} %}#}
     {# Check if we have an image to work with and if we should fallback to a placeholder#}
-    {% if not image|length %}
+    {#{% if not image|length %}#}
+    {#{% else %}#}
+        {#{% set asset = image.first() %}#}
+    {#{% endif %}#}
+    {#{% if asset is defined %}#}
+        {#{% set srcSetImages = {#}
+            {#440: craft.imager.transformImage(asset, attribute(breakPointTransforms, 440)),#}
+            {#660: craft.imager.transformImage(asset, attribute(breakPointTransforms, 660)),#}
+            {#820: craft.imager.transformImage(asset, attribute(breakPointTransforms, 820)),#}
+            {#980: craft.imager.transformImage(asset, attribute(breakPointTransforms, 980)),#}
+            {#1440: craft.imager.transformImage(asset, attribute(breakPointTransforms, 1440)),#}
+        {#} %}#}
+
+        {#<img src="{{ craft.imager.transformImage(asset, attribute(transforms, transform)) }}"#}
+             {#sizes="{{ attribute(sizes, transform) }}"#}
+             {#srcset="{% spaceless %}{% for width, image in srcSetImages %}{{ image }} {{ width }}w{% if not loop.last %}, {% endif %}{% endfor %}{% endspaceless %}"#}
+             {#alt="{{ asset.title }}"#}
+        {#>#}
+    {#{% endif %}#}
+{#{% endmacro %}#}
+
+{% macro renderSrcset(image, transform) %}
+    {% if image %}
+        {% set transforms = {
+            'grid__2': { mode: 'fit', width: 200, quality: 100, },
+            'grid__4': { mode: 'fit', width: 400, quality: 100, },
+            'grid__6': { mode: 'fit', width: 700, quality: 100, },
+            'grid__8': { mode: 'fit', width: 800, quality: 100, },
+            'grid__12': { mode: 'fit', width: 1400, quality: 100, },
+        } %}
+        {% set breakPointTransforms = {
+            440: { mode: 'fit', width: 440, quality: 100, },
+            660: { mode: 'fit', width: 660, quality: 100, },
+            820: { mode: 'fit', width: 820, quality: 100, },
+            980: { mode: 'fit', width: 980, quality: 100, },
+            1440: { mode: 'fit', width: 1400, quality: 100, },
+        } %}
+        {# xxs: 320px, xsm: 440px, sml: 660px, med: 820px, lrg: 980px, xlr: 1200px #}
+        {% set sizes = {
+            'grid__2': '(min-width: 660px) 13vw, 100vw',
+            'grid__4': '(min-width: 660px) 33vw, 100vw',
+            'grid__6': '(min-width: 660px) and (max-width: 2500px) 50vw, , 100vw',
+            'grid__8': '(min-width: 660px) 75vw, 100vw',
+            'grid__12': '100vw',
+        } %}
+        {# Check if we have an image to work with and if we should fallback to a placeholder #}
+        {% if image|length %}
+            {% set asset = image.first() %}
+        {% endif %}
+        {% if asset is defined %}
+            {% set srcSetImages = {
+                440: craft.imager.transformImage(asset, attribute(breakPointTransforms, 440)),
+                660: craft.imager.transformImage(asset, attribute(breakPointTransforms, 660)),
+                820: craft.imager.transformImage(asset, attribute(breakPointTransforms, 820)),
+                980: craft.imager.transformImage(asset, attribute(breakPointTransforms, 980)),
+                1440: craft.imager.transformImage(asset, attribute(breakPointTransforms, 1440)),
+            } %}
+            <img src="{{ asset.getUrl(attribute(transforms, transform)) }}" sizes="{{ attribute(sizes, transform) }}" srcset="{% spaceless %}{% for width, image in srcSetImages %}{{ image }} {{ width }}w{% if not loop.last %}, {% endif %}{% endfor %}{% endspaceless %}" alt="{{ asset.title }}">
+        {% endif %}
+    {% endif %}
+{% endmacro %}
+
+{% macro renderFocusSrcset(image, transform, fallbackImage) %}
+    {% if not image|length and fallbackImage %}
+        {% set asset = fallback.overviewImage.first() %}
     {% else %}
         {% set asset = image.first() %}
     {% endif %}
-    {% if asset is defined %}
-        {% set srcSetImages = {
-            440: craft.imager.transformImage(asset, attribute(breakPointTransforms, 440)),
-            660: craft.imager.transformImage(asset, attribute(breakPointTransforms, 660)),
-            820: craft.imager.transformImage(asset, attribute(breakPointTransforms, 820)),
-            980: craft.imager.transformImage(asset, attribute(breakPointTransforms, 980)),
-            1440: craft.imager.transformImage(asset, attribute(breakPointTransforms, 1440)),
+    {% if asset is defined and not asset is null %}
+        {% set transforms = {
+            'headerImage': { mode: 'crop', width: 300, height: 550, position: asset.focusPctX ~ '% ' ~ asset.focusPctY ~ '%', quality: 100 },
+            'news': { mode: 'crop', width: 960, height: 500, position: asset.focusPctX ~ '% ' ~ asset.focusPctY ~ '%', quality: 100 },
         } %}
-
+        {# xxs: 320px, xsm: 440px, sml: 660px, med: 820px, lrg: 980px, xlr: 1200px #}
+        {% set sizes = {
+            'headerImage': '(min-width: 660px) 25vw, 100vw',
+            'news': '100vw',
+        } %}
+        {# Check if we have an image to work with and if we should fallback to a placeholder#}
+        {% set defaultTransformSettings = {
+            'headerImage' : { format: 'jpg', mode: 'crop', position: asset.focusPctX ~ '% ' ~ asset.focusPctY ~ '%', allowUpscale: true},
+            'news' : { format: 'jpg', mode: 'crop', position: asset.focusPctX ~ '% ' ~ asset.focusPctY ~ '%', allowUpscale: true},
+        } %}
+        {% set srcSetImage = {
+            'headerImage': {
+                320: craft.imager.transformImage(asset, {width: 350, height: 650}, attribute(defaultTransformSettings, transform)),
+                660: craft.imager.transformImage(asset, {width: 550, height: 800}, attribute(defaultTransformSettings, transform)),
+            },
+            'news': {
+                320: craft.imager.transformImage(asset, {width: 640, height: 340}, attribute(defaultTransformSettings, transform)),
+                660: craft.imager.transformImage(asset, {width: 750, height: 450}, attribute(defaultTransformSettings, transform)),
+            }
+        } %}
         <img src="{{ craft.imager.transformImage(asset, attribute(transforms, transform)) }}"
              sizes="{{ attribute(sizes, transform) }}"
-             srcset="{% spaceless %}{% for width, image in srcSetImages %}{{ image }} {{ width }}w{% if not loop.last %}, {% endif %}{% endfor %}{% endspaceless %}"
+             srcset="{% spaceless %}{% for width, image in attribute(srcSetImage, transform) %}{{ image }} {{ width }}w{% if not loop.last %}, {% endif %}{% endfor %}{% endspaceless %}"
              alt="{{ asset.title }}"
+             class="{% if transform == 'headerImage' %}show--bp-med{% endif %}"
         >
     {% endif %}
 {% endmacro %}
