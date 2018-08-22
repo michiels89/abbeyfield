@@ -41,13 +41,19 @@
     position: relative;
     float: right;
     display: none;
+    padding-top: 0;
+
     li {
-      margin: 0 $rh-sml;
+      margin: 0 $rh-xsm;
       font: bold 20px sans-serif;
+      color: $color-primary !important;
+    }
+    li:last-child{
+      border: 5px solid black;
     }
     a {
       @include link-variant($color-text, $color-primary);
-      color: #012b5f;
+      color: $color-primary !important;
       display: block;
       padding: $rh-xxs 0;
       background-image: linear-gradient(to right, $color-primary, $color-primary);
@@ -77,14 +83,15 @@
       @include link-variant($color-text, $color-primary);
       display: block;
       padding: $rh-xxs 0;
-      background-image: linear-gradient(to right, $color-primary, $color-primary);
+      background-image: linear-gradient(to right, $color-secondary, $color-secondary);
       background-repeat: no-repeat;
       background-position: center bottom;
       background-size: 0 2px;
       &:hover,
       &:focus,
       &.active {
-        background-size: 100% 2px;
+        color: $color-secondary;
+        background-size: 100% 2px ;
       }
     }
     @include breakpoint($breakpoint-flyout) {
@@ -163,15 +170,17 @@
       @include link-variant($white);
       @include fsRem(20px);
       display: block;
-      font-weight: $font-weight-semi-bold;
+      font-weight: $font-weight-thin;
+      font-size: $font-size-med;
       padding: $rh-xxs;
       text-decoration: none;
+      color: $color-primary !important;
       &:focus,
       &.active {
-        color: $white !important;
+        color: $color-primary !important;
       }
       &:hover {
-        color: $white !important;
+        color: $color-primary !important;
         text-decoration: underline;
       }
     }
@@ -181,6 +190,17 @@
         font-weight: 500;
       }
     }
+    .contact_form input{
+
+      margin-right: 0px;
+      width: 100%;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      padding: 5px 0px;
+      text-indent: 10px;
+    }
+
   } // end .--doormat
 
   &--footer {
@@ -189,6 +209,10 @@
     @extend %ext-horizontal-nav;
     line-height: 1;
     display: inline-block;
+    nav--social ul{
+      margin-top: -15px ;
+
+    }
     li {
       padding: $rh-xsm;
       @include breakpoint(map-get($breakpoints, xsm), max-width) {
@@ -199,6 +223,7 @@
       }
       &:last-of-type {
         padding-right: 0;
+        //border-left: black;
       }
     }
     a {

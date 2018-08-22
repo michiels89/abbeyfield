@@ -10,6 +10,15 @@
     <div class="grid {{ inverseClass }}">
         <div class="grid__12 grid--bp-sml__6">
             {{ assets.renderSrcset(block.image, 'grid__6') }}
+            <div class="spacer">
+                {% if block.cta2|length %}
+                    <div class="inline">
+                        {% for cta in block.cta2.find() %}
+                            {% include '_snippet/_content/_block/_cta' %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
         </div>
         <div class="grid__12 grid--bp-sml__6">
             <div class="spacer">

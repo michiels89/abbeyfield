@@ -1,4 +1,4 @@
-<div class="grid__item container">
+<div class="grid__item container news_item" >
     {% if image is defined %}
         <div class=" grid ">
             <div class="grid__12 grid--bp-med__2">
@@ -15,7 +15,7 @@
         {% if image is defined %}
             <div class="grid__12 grid--bp-med__8">
         {% endif %}
-                <div class="card__main ">
+                <div class="card__main">
                     <a href="{{ newsEntry.getUrl() }}" class="card card--news">
                         {#<div class="card__meta">{{ newsEntry.postDate.format('d.m.Y') }}</div>#}
                         <h4 class="card__title">{{ newsEntry.overviewTitle ? newsEntry.overviewTitle : newsEntry.title }}</h4>

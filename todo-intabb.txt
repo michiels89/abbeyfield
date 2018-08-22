@@ -1,0 +1,37 @@
+2018/08/17
+
+HOME
+
+- Styling taalswitch  ?
+
+    ul li:last-child{
+      border-left: 1px solid lightgrey !important;
+      color: lightgrey !important;
+      margin: auto;
+    }
+
+* Topnav iets hoger plaatsen
+
+- Javascript font sizing
+- Zoek styling
+- Zoek config
+
+* Mainnav active/hover state oranje
+* Hero -> link toevoegen
+* Hero -> Titel blok even lang maken als tekst eronder
+* Hero -> Links uitlijnen met logo
+
+* Nieuws -> Tussenlijn toevoegen
+* Nieuws -> hover state
+* Nieuws -> CTA styling zoals andere
+* Nieuws -> 2 col en rechts foto toevoegen https://unsplash.com/s
+* Home text -> CTA toevoegen
+* Getuigenissen -> Titel kleiner en andere kleur
+* Getuigenissen -> CTA toevoegen
+
+- Section getuigenissen background over volledige breedte (Bram)
+- Doormat navigation (Bram)
+
+* Nieuwsbrief form -> Styling, maar moet nog niet werken
+* Nieuwsbrief -> Social media icons weg
+- Footer -> Styling + onderaan social media icons toevoegen   1/2, foto's partners?!?

@@ -1,0 +1,590 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:v="urn:schemas-microsoft-com:vml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>KULDYN</title>
+        <style type="text/css">
+        body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        }
+        /* Hotmail centreren */
+        .ReadMsgBody { width: 100%;}
+        .ExternalClass {width: 100%;}
+        /* Achtergrond Outlook2007 */
+        v:* {
+        behavior: url(#default#VML);
+        display: inline-block;
+        }
+        /* Link kleur Yahoo */
+        .yshortcuts { color: #CCCCCC } /* Body text color */
+        .yshortcuts a span { color: #00FF00 } /* Link text color */
+        img {
+        display: block;
+        }
+        a img {
+        border: 0;
+        }
+        a {
+        color: #211C51;
+        }
+        table td {
+        text-align: left;
+        font-size: 14px;
+        line-height: 22px;
+        }
+        table td p {
+        margin: 0 0 10px 0;
+        padding: 0;
+        }
+        table td.knop a {
+        color: #FFFFFF;
+        text-decoration: none;
+        }
+        img.quote-image {
+        float: right;
+        }
+        img.arrow {
+        float: right;
+        padding: 4px 0px 0 10px;
+        }
+        table td.footer a {
+        color: #292F75;
+        text-decoration: none;
+        }
+        @media (max-width: 600px) {
+        * { -webkit-text-size-adjust:none; }
+        table[id=wrapper] { width:100%!important; padding:0px 10px !important; }
+        table[id=wrapper] #main, table[id=wrapper] .inner { width:100% !important; }
+        table[id=wrapper] .hidden, table[id=wrapper] .spacer { width:0 !important; display:none !important; }
+        table[id=wrapper] .width-null { width: 0px !important; }
+        table[id=wrapper] .top-story { width:100% !important; clear: left !important; padding: 0 0 5px 0 !important; }
+        table[id=wrapper] .top-story-links {  width:100% !important; clear: left !important; padding: 0 30px 25px 0 !important; }
+        table[id=wrapper] .top-story-rechts {  width:100% !important; clear: left !important; padding: 0 0px 5px 0px !important; }
+        table[id=wrapper] .fullimage img { width: 100% !important; height: auto !important; }
+        table[id=wrapper] .left { text-align: left !important; }
+        table[id=wrapper] .center { text-align: center !important; }
+        table[id=wrapper] .column { display: block !important; float: left !important; }
+        }
+        </style>
+    </head>
+    <body>
+        <table id="wrapper" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#F9F9F9" style="background-image: url('images/header.png');">
+            <tr>
+                <td>
+                    <center>
+                    <table id="main" width="600" cellspacing="0" cellpadding="0" border="0">
+                        
+                        <tr>
+                            <td></td>
+                            <td>
+                                <table class="top-story" width="30%" cellspacing="0" cellpadding="0" border="0" align="left">
+                                    <tr>
+                                        <td class="hidden width-null" height="60"></td>
+                                    </tr>
+                                    <tr>
+                                        <td height="20"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="center">
+                                            <!--<img editable src="images/logo.png" width="184" style="display: inline;" />-->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="hidden width-null" height="20"></td>
+                                    </tr>
+                                </table>
+                                <table class="top-story" width="60%" cellspacing="0" cellpadding="0" border="0" align="right">
+                                    <tr>
+                                        <td class="hidden width-null" height="80"></td>
+                                    </tr>
+                                    <tr>
+                                        <td height="20"></td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="middle" class="center" style="text-align: right;">
+                                            <span style="color: #E8414D; font-weight: bold; font-size: 21px;"><singleline label='Nieuwsbrief titel'>NIEUWSBRIEF</singleline></span>
+                                            <br />
+                                            <span style="color: #444444;font-style: italic;font-size: 17px;"><singleline label='Datum'>Datum</singleline></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="20"></td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    </center>
+                </td>
+            </tr>
+        </table>
+        <table id="wrapper" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
+            <tr>
+                <td>
+                    <center>
+                    
+                    <table id="main" width="600" cellspacing="0" cellpadding="0" border="0">
+                        
+                        <tr>
+                            <td colspan="2">
+                                <repeater>
+                                <!-- Grote foto -->
+                                <layout label='Grote foto'>
+                                <table cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
+                                    <tr>
+                                        <td class="fullimage"><img src="../A53/images/image1.jpg" editable width="600" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td height="20"></td>
+                                    </tr>
+                                </table>
+                                </layout>
+                                <!-- Titel -->
+                                <!--
+                                <layout label='Titel'>
+                                <table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
+                                    <tr>
+                                        <td colspan="3" height="10"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #E8414D; font-size: 24px; line-height: 26px;">
+                                            <multiline label='Titel'>Titel</multiline>
+                                        </td>
+                                        <td width="30"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" height="10"></td>
+                                    </tr>
+                                </table>
+                                </layout>-->
+                                <!-- Tekst -->
+                                <!--
+                                <layout label='Tekst'>
+                                <table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
+                                    <tr>
+                                        <td colspan="3" height="10"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td style="color: #444444;font-size: 16px;"><multiline label='Tekst'>Morbi dapibus diam felis. Quisque viverra, magna facilisis rhoncus tristique, purus turpis bibendum libero, id ullamcorper orci est ut tellus. Quisque vel sollicitudin felis. Nulla eleifend leo et quam gravida pulvinar nec sit amet velit. Ut ligula erat, dapibus quis tempor at, convallis non enim. Ut augue dolor, facilisis a magna eu, placerat luctus nisi. </multiline></td>
+                                        <td width="30"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" height="10"></td>
+                                    </tr>
+                                </table>
+                                </layout> -->
+                                <!-- Lijn -->
+                                <layout label="Lijn">
+                                <table cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
+                                    <tr>
+                                        <td colspan="3" height="10"></td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td class="fullimage"><img editable src="../A53/images/line.jpg" width="600" /></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" height="10"></td>
+                                    </tr>
+                                </table>
+                                </layout>
+                                <!-- Artikel foto rechts -->
+                                <layout label='Artikel foto rechts'>
+                                <table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
+                                    <tr>
+                                        <td height="10"></td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top">
+                                            <table class="top-story-links" width="48%" cellspacing="0" cellpadding="0" border="0" align="left">
+                                                <tr>
+                                                    <td></td>
+                                                    <td>
+                                                        <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                                            <tr>
+                                                                <td style="color: #211C51; font-size: 24px; line-height: 26px;"><singleline label='Titel artikel'>Titel artikel</singleline></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="10"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="color: #444444;font-size: 16px;"><multiline label='Inhoud Artikel'>Inhoud Artikel</multiline></td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table class="top-story-rechts" width="48%" cellspacing="0" cellpadding="0" border="0" align="right">
+                                                <tr>
+                                                    <td>
+                                                        <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                                            <tr>
+                                                                <td valign="top"><a href="https://www.domein.be"><img src="../A53/images/foto-groot.jpg" editable width="290" /></a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="10"></td>
+                                                            </tr>
+                                                            
+                                                        </table>
+                                                    </td>
+                                                    <td width="30"></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="10"></td>
+                                    </tr>
+                                </table>
+                                </layout>
+                                <!-- Artikel foto links -->
+                                <layout label='Artikel foto links'>
+                                <table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
+                                    <tr>
+                                        <td height="10"></td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top">
+                                            <table class="top-story-links" width="48%" cellspacing="0" cellpadding="0" border="0" align="left">
+                                                <tr>
+                                                    <td></td>
+                                                    <td>
+                                                        <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                                            <tr>
+                                                                <td valign="top"><a href="https://www.domein.be"><img src="../A53/images/foto-groot.jpg" editable width="290" /></a></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="10"></td>
+                                                            </tr>
+                                                            
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table class="top-story-rechts" width="48%" cellspacing="0" cellpadding="0" border="0" align="right">
+                                                <tr>
+                                                    <td>
+                                                        <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                                            <tr>
+                                                                <td style="color: #211C51; font-size: 24px; line-height: 26px;"><singleline label='Titel artikel'>Titel artikel</singleline></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="10"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="color: #444444;font-size: 16px;"><multiline label='Inhoud Artikel'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</multiline></td>
+                                                            </tr>
+                                                        </table>
+                                                        
+                                                    </td>
+                                                    <td width="30"></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="10"></td>
+                                    </tr>
+                                </table>
+                                </layout>
+
+
+                                <!-- Twee artikels -->
+                                <!--
+                                <layout label='Twee artikels'>
+                                <table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
+                                    <tr>
+                                        <td height="10"></td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top">
+                                            <table class="top-story-links" width="48%" cellspacing="0" cellpadding="0" border="0" align="left">
+                                                <tr>
+                                                    <td></td>
+                                                    <td>
+                                                        <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                                            <tr>
+                                                                <td style="color: #211C51; font-size: 24px; line-height: 26px;"><singleline label='Titel artikel'>Titel artikel</singleline></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="10"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="color: #444444;font-size: 16px;"><multiline label='Inhoud Artikel'>Inhoud Artikel</multiline></td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <
+                                            <table class="top-story-rechts" width="48%" cellspacing="0" cellpadding="0" border="0" align="right">
+                                                <tr>
+                                                    <td>
+                                                        <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                                            <tr>
+                                                                <td style="color: #211C51; font-size: 24px; line-height: 26px;"><singleline label='Titel artikel'>Titel artikel</singleline></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="10"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="color: #444444;font-size: 16px;"><multiline label='Inhoud Artikel'>Inhoud Artikel</multiline></td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="10"></td>
+                                    </tr>
+                                </table> 
+                                </layout> -->
+                                <!-- quote -->
+                                <layout label='quote'>
+                                  <table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
+                                    <tr>
+                                        <td class="hidden width-null" height="10"></td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top">
+                                            <table class="top-story-links" width="26%" cellspacing="0" cellpadding="0" border="0" align="left">
+                                                <tr>
+                                                    <td></td>
+                                                    <td class="hidden width-null footer">
+                                                        <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                                            <tr>
+                                                                <td valign="top">
+                                                                <img class="quote-image" src="../A53/images/man.png" editable width="120" /></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="10"></td>
+                                                            </tr>
+                                                            
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table> 
+                                            <table class="top-story-rechts" width="66%" cellspacing="0" cellpadding="0" border="0" align="right">
+                                                <tr>
+                                                    <td>
+                                                        <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                                            <tr>
+                                                                <td style="color: #444444; font-size: 20px; line-height: 26px;font-style: italic;"><singleline label='Quote tekst'>Cras mattis consectetur purus sit amet fermentum. Donec id elit non mi porta gravida at eget metus.  </singleline></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td height="10"></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="color: #444444;font-size: 16px;font-style: italic"><multiline label='Quote naam'>Naam, bedrijf</multiline></td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                    <td></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="10"></td>
+                                    </tr>
+                                </table>
+                                </layout>
+                                <!-- Knop -->
+                                <layout label="Knop">
+                                <table width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
+                                    <tr>
+                                        <td height="10"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: center;">
+                                            <table class="button" cellspacing="0" cellpadding="0" border="0" bgcolor="#E8414D">
+                                                <tr>
+                                                    <td>
+                                                        <table cellspacing="0" cellpadding="0" border="0">
+                                                            <tr>
+                                                                <td class="knop" style="color: #FFFFFF; font-weight: bold; font-size: 12px;text-align: center; text-transform: uppercase; padding: 10px; border: 1px solid #fff; line-height: 18px; letter-spacing: 1px;">
+                                                                    <singleline label='Knop'>offerte aanvragen</singleline>
+                                                                    <img class="arrow" src="../A53/images/arrow.png" alt="" />
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="10"></td>
+                                    </tr>
+                                </table>
+                                </layout>
+                                </repeater>
+                            </td>
+                        </tr>
+                    </table>
+                    </center>
+                </td>
+            </tr>
+        </table>
+        
+        <table id="wrapper" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#F9F9F9">
+            <tr>
+                <td>
+                    <center>
+                    <table id="main" width="600" cellspacing="0" cellpadding="0" border="0">
+                        
+                        <tr>
+                            <td></td>
+                            <td>
+                                <table class="top-story" width="30%" cellspacing="0" cellpadding="0" border="0" align="left">
+                                   
+                                    <tr>
+                                        <td height="50"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="">
+                                        <img src="../A53/images/logo-small.png" style="display: inline;" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td height="20"></td>
+                                    </tr> 
+                                    <tr>
+                                        <td> <h2>RSZ</h2></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #444444;font-size: 16px;font-style: italic">
+                                            Parkstaat 10 <br />
+                                            3000 Leuven
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="10"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #444444;font-size: 16px;font-style: italic">
+                                            <a href="mailto: info@domein.be">info@domein.be</a><br />
+                                            +32 (0)12 34 56 78
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="hidden width-null" height="20"></td>
+                                    </tr>
+                                </table>
+                                <table class="top-story" width="30%" cellspacing="0" cellpadding="0" border="0" align="left">
+                                   
+                                    <tr>
+                                        <td height="50"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="" height="32,5"></td> 
+                                    </tr>
+                                    <tr>
+                                        <td height="20"></td>
+                                    </tr> 
+                                    <tr>
+                                        <td> <h2>HIVA</h2></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #444444;font-size: 16px;font-style: italic">
+                                            Parkstraat 47<br />
+                                            3000 Leuven
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="10"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #444444;font-size: 16px;font-style: italic">
+                                            <a href="mailto: info@domein.be">info@domein.be</a><br />
+                                            +32 (0)16 32 33 33
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="hidden width-null" height="20"></td>
+                                    </tr>
+                                </table>
+                                <table class="top-story" width="40%" cellspacing="0" cellpadding="0" border="0" align="right">
+                                    <tr>
+                                        <td height="50"></td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="middle" class="hidden width-null footer" style="text-align: right;">
+                                            <span style="color: #292F75; font-weight: bold; font-size: 16px;">
+                                                <a href="https://www.domein.be">Methodologie</a>
+                                            </span>
+                                            <br />
+                                            <br />
+                                            <span style="color: #292F75; font-weight: bold; font-size: 16px;">
+                                                <a href="https://www.domein.be">Publicaties</a>
+                                            </span>
+                                            <br />
+                                            <br />
+                                            <span style="color: #292F75; font-weight: bold; font-size: 16px;">
+                                                <a href="https://www.domein.be">Cijfers</a>
+                                            </span>
+                                            <br />
+                                            <br />
+                                            <span style="color: #292F75; font-weight: bold; font-size: 16px;">
+                                                <a href="https://www.domein.be">Over Dynam</a>
+                                            </span>
+                                            <br />
+                                            <br />
+                                            <span style="color: #292F75; font-weight: bold; font-size: 16px;">
+                                                <a href="https://www.domein.be">Contact</a>
+                                            </span>
+                                            <br />
+                                            <br />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td height="20"></td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    </center>
+                </td>
+            </tr>
+        </table>
+        <table id="wrapper" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#FFFFFF">
+            <tr>
+                <td>
+                    <center>
+ 
+                    <table id="main" width="600" cellspacing="0" cellpadding="0" border="0">
+                        <tr>
+                            <td colspan="2" height="10"></td>
+                        </tr>
+                        <tr>
+                            <td width="46%" style="color: #828282; font-size: 12px;">
+                                &copy; <currentyear> <a href="https://www.domein.be">domein.be</a>
+                            </td>
+                            <td class="grijs" width="46%" style="text-align: right; font-size: 12px;">
+                                <unsubscribe>Uitschrijven</unsubscribe>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" height="40"></td>
+                        </tr>
+                    </table>
+
+                    </center>
+                </td>
+            </tr>
+        </table>
+        
+        
+    </body>
+</html>

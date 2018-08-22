@@ -18,3 +18,83 @@
         </a>
     </div>
 </form>
+
+
+{#<div class="search">#}
+
+
+    {#<script type="text/javascript">#}
+        {#//<![CDATA[#}
+        {#jQuery(function($)#}
+        {#{#}
+            {#var value, $searchword = $('#mod-finder-searchword');#}
+
+            {#// Set the input value if not already set.#}
+            {#if (!$searchword.val())#}
+            {#{#}
+                {#$searchword.val('Zoeken...');#}
+            {#}#}
+
+            {#// Get the current value.#}
+            {#value = $searchword.val();#}
+
+            {#// If the current value equals the default value, clear it.#}
+            {#$searchword.on('focus', function()#}
+            {#{	var $el = $(this);#}
+                {#if ($el.val() === 'Zoeken...')#}
+                {#{#}
+                    {#$el.val('');#}
+                {#}#}
+            {#});#}
+
+            {#// If the current value is empty, set the previous value.#}
+            {#$searchword.on('blur', function()#}
+            {#{	var $el = $(this);#}
+                {#if (!$el.val())#}
+                {#{#}
+                    {#$el.val(value);#}
+                {#}#}
+            {#});#}
+
+            {#$('#mod-finder-searchform').on('submit', function(e){#}
+                {#e.stopPropagation();#}
+                {#var $advanced = $('#mod-finder-advanced');#}
+                {#// Disable select boxes with no value selected.#}
+                {#if ( $advanced.length)#}
+                {#{#}
+                    {#$advanced.find('select').each(function(index, el) {#}
+                        {#var $el = $(el);#}
+                        {#if(!$el.val()){#}
+                            {#$el.attr('disabled', 'disabled');#}
+                        {#}#}
+                    {#});#}
+                {#}#}
+            {#});#}
+
+            {#/*#}
+             {#* This segment of code sets up the autocompleter.#}
+             {#*/#}
+            {#var url = '/nl/component/finder/?task=suggestions.display&format=json&tmpl=component';#}
+            {#var ModCompleter = new Autocompleter.Request.JSON(document.getElementById('mod-finder-searchword'), url, {'postVar': 'q'});#}
+        {#});#}
+        {#//]]>#}
+    {#</script>#}
+
+
+
+    {#<form id="mod-finder-searchform" name="mod-finder-searchform" action="/nl/zoeken" method="get" class="form-search">#}
+        {#<div class="search">#}
+            {#<a href="#" onclick="document.forms['mod-finder-searchform'].submit(); return false;"></a>#}
+            {#<input type="text" name="q" id="mod-finder-searchword" class="search-query input-medium" size="20" value="" autocomplete="off">#}
+        {#</div>#}
+    {#</form>#}
+
+
+    {#<!--#}
+    {#<form id="mod-finder-searchform" action="/nl/zoeken" method="get" class="form-search">#}
+        {#<div class="finder">#}
+            {#<input type="text" name="q" id="mod-finder-searchword" class="search-query input-medium" size="20" value="" />#}
+                                {#</div>#}
+    {#</form>#}
+    {#-->#}
+{#</div>#}

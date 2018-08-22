@@ -1,6 +1,6 @@
 {% if craft.amNav.getNavRaw("asside") is defined %}
     <div class="container">
-        <nav class="nav nav--doormat grid " style="margin:auto;" >
+        <nav class="nav nav--doormat grid "  >
             <div class="grid__12 grid--bp-med__3">
                 <div class="spacer">
                     <ul>
@@ -28,13 +28,19 @@
             </ul>
             </div>
             <div class="grid__12 grid--bp-med__3">
-                <form action="" method="post">
-                    <input type="email" placeholder="Email Address"><br><br>
+                <form action="" method="post" class="contact_form">
+                    <input type="email" placeholder="Email Address*" required><br><br>
                     <input type="text" placeholder="First Name"><br><br>
                     <input type="text" placeholder="Last Name"><br><br>
-                    <input type="submit" value="Inschrijven Nieuwsbrief">
+                    <input class= "btn" type="submit" value="Inschrijven Nieuwsbrief "><span></span>
                 </form>
-                {#{% include '_snippet/_content/_socialMedia' %}#}
+                {#{% if socialMedia.facebook or socialMedia.instagram or socialMedia.linkedin or socialMedia.pinterest or socialMedia.twitter or socialMedia.youtube or socialMedia.google %}#}
+                    {#<div class="nav nav--social">#}
+                        {#<ul>#}
+                            {#{% include '_snippet/_content/_socialMedia' %}#}
+                        {#</ul>#}
+                    {#</div>#}
+                {#{% endif %}#}
             </div>
         </nav>
     </div>

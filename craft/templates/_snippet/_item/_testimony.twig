@@ -1,0 +1,19 @@
+<div class="section section--default section--border-top">
+    <div class="blog testimonials_list_holder">
+        {% set fullscreen = '?rel=0 frameborder=0 allowfullscreen' %}
+        {% for testimony in testimonies %}
+            <div class="items-row cols-1 row-0 row-fluid cf">
+                <div class="img">
+                    <a href="{{ testimony.video ~ fullscreen  }}" class="modal modal_link" data-modal-iframe="true" data-modal-width="95%" data-modal-height="95%"><span><span></span></span>
+                        {#<img src="{{ testimony.quote }}" alt="" itemprop="thumbnailUrl"/>#}
+                        <div itemprop="thumbnailUrl"> {{ assets.renderSrcset(testimony.fotos, 'grid__2') }}</div>
+                    </a>
+                </div>
+                <p>{{ testimony.quote }}</p>
+                <span><h3 class="reverse"> {{ testimony.title }}</h3></span>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+

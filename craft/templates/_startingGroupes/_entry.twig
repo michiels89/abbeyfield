@@ -1,0 +1,44 @@
+{% extends "_layout" %}
+{% import '_macro/_pager' as pagination %}
+{% import '_macro/_assets' as assets %}
+
+{% set breadcrumbs = [
+    craft.entries.section('houses').first(),
+    entry,
+] %}
+
+{% block content %}
+    <div class="container house">
+        <div class="grid">
+            <div class="grid__12 grid--bp-med__3">
+                {{ craft.amNav.getNav("assidehouses") }}
+            </div>
+            <div class="grid__12 grid--bp-med__9">
+                <div class="section section--default">
+                    <div class="container">
+                        {% include '_snippet/_content/_pageTitle' %}
+                        {% include '_snippet/_content/_intro' %}
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="container ">
+                        <div>
+                            {% set entries = craft.entries.section('house').order('postDate DESC') %}
+                            {% paginate entries.limit(5) as pageInfo, houses %}
+
+                            <div class="section">
+                                <div class="container">
+                                    {% for house in houses %}
+                                        {% include '_snippet/_item/_house' %}
+                                    {% endfor %}
+                                </div>
+                                {{ pagination.pager(pageInfo) }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -15,4 +15,13 @@
             </div>
         </div>
     </div>
+    <div class="spacer">
+        {% if block.cta|length %}
+            <div class="inline">
+                {% for cta in block.cta.find() %}
+                    {% include '_snippet/_content/_block/_cta' %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
 {% endif %}

@@ -41,8 +41,10 @@
             <div class="container">
                 <div class="section__content">
                     <div class="block">
+                        <div class="grid">
+                        <div class="grid__12 grid--bp-med__6">
                         <div class="spacer--xsm grid grid--bp-med-1-col">
-                            <h2 class="spacer">{{ 'Alle nieuws'|t }}</h2>
+                            <h2 class="spacer">{{ 'ALLE NIEUWS'|t }}</h2>
     {% endif %}
 
     {% for newsEntry in news %}
@@ -50,15 +52,19 @@
     {% endfor %}
 
     {% if news|length %}
-                        </div>
+
 
                         {% set overview = craft.entries.section('newsOverview').first() %}
 
                         {% if overview and otherNews|length > 5 %}
                             <div class="spacer--xlr text--center">
-                                <a href="{{ overview.url }}" class="btn">{{ "Nieuws"|t }}</a>
+                                <a href="{{ overview.url }}" class="btn">{{ "NIEUWS"|t }}</a>
                             </div>
                         {% endif %}
+                            </div>
+                            </div>
+        <div class="grid__12 grid--bp-med__6"></div>
+                        </div>
                     </div>
                 </div>
             </div>

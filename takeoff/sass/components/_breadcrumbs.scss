@@ -1,4 +1,6 @@
 .breadcrumb {
+  border-bottom: 1px solid lightgrey;
+
   @include fsRem(14px);
 
   &__item {

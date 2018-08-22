@@ -3,3 +3,12 @@
         {{ entry.intro }}
     </div>
 {% endif %}
+    <div class="spacer">
+        {% if entry.cta|length %}
+            <div class="inline" style="margin-bottom: 25px">
+                {% for cta in entry.cta.find() %}
+                    {% include '_snippet/_content/_block/_cta' %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>

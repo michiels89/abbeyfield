@@ -52,50 +52,31 @@
 // Print
 @import 'core/print';
 
-// Banner homepage
-
-.hero__title{
-  background-color: #012b5f;
-  //background: rgba(23, 70, 123, 0.95);
-  padding: 25px 35px;
-  font-weight: 400;
-  display: inline-block;
-  font-size: 2.4em;
-  margin: 0 50px;
-  color: #fff;
-
-}
-.hero__body{
-
-  background-color: #eb6d12;
-  //background: rgba(233, 93, 15, 0.95);
-  max-width: 470px;
-  padding: 20px;
-  padding-top: 25px;
-  margin: 0 50px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  color: #fff;
-  overflow: auto;
-  a{
-    color:#fff;
-    text-decoration: none;
-    background-color: #012b5f;
-    text-transform: uppercase;
-    padding: 8px 25px;
-  }
-
-}
 
 
 //Nieuws overzicht
 .news:first-child{
   border-top: 1px solid lightgrey;
 }
+.news_title{
 
-.news .grid__item{
+  padding-top: 24px;
+}
+
+.news_item{
   border-bottom: 1px solid lightgrey;
+  color: $color-primary;
+  margin-top: 0;
+  padding-top: 14px;
+  padding-bottom: 10px;
+}
+.news_item:hover{
+
+  background-color: #f1f1f1;
+  text-decoration-line: underline;
+
+}
+.news .grid__item{
 
   .card__img img{
 
@@ -105,7 +86,33 @@
   }
 
 }
+.btn span{
+     width: 0px;
+     height: 0px;
+     display: inline-block;
+     border: solid 6px white;
+     border-color: transparent transparent transparent white;
+     margin-left: 15px;
+     margin-right: -6px;
+ }
 
+//Huizen overzicht
+
+.house:first-child{
+  border-top: 1px solid lightgrey;
+}
+
+.house .grid__item {
+  border-bottom: 1px solid lightgrey;
+}
+.house{
+
+ h1, h2, h3{
+
+    color: $color-primary;
+    font-weight: $font-weight-light;
+  }
+}
 
 
 

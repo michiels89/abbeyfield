@@ -6,7 +6,9 @@
             {% endif %}
             {% if entry.hero.description %}
                 <div class="hero__body">{{ entry.hero.description }}
-                    <a class="button" href="/nl/over-abbeyfield/doe-mee">Doe mee</a>
+                    {% if entry.hero.button %}
+                    <a class="button btn" href="{{ entry.hero.button }}">Doe mee<span></span></a>
+                    {% endif %}
                 </div>
             {% endif %}
         </div>

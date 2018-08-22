@@ -3,6 +3,15 @@
   max-width: 1250px;
   margin: auto;
 
+ .main {
+
+   padding-top: 40px;
+ }
+  .main nav{
+
+    padding-top: 30px;
+  }
+
   @include cf;
   padding: $rh-med 0;
   &__logo {

@@ -3,14 +3,8 @@
         <div class="container">
             <div class="section__content">
                 <div class="grid">
-                    {#<div class="grid__12 grid--bp-med__6">#}
                         {% include '_snippet/_nav/_doormat' %}
                     </div>
-                    {#<div class="grid__12 grid--bp-med__6">#}
-                        {#<div class="section--doormat__block">#}
-
-                        {#</div>#}
-                    {#</div>#}
                 </div>
             </div>
         </div>
@@ -20,38 +14,46 @@
             <div class="section__content">
                 <div class="grid">
                     <div class="grid__12 grid--bp-sml__6">
+                        <nav class="nav nav--footer">
+                            <ul>
+                                {% set privacyPage = craft.entries.section('privacy').first() %}
+                                {#{% if privacyPage %}#}
+                                    {#<li><a href="{{ privacyPage.url }}" class="nav__link">{{ privacyPage.title }}</a></li>#}
+                                {#{% endif %}#}
+
+                                {% set termsPage = craft.entries.section('termsConditions').first() %}
+                                {% if termsPage %}
+                                    <li><a href="{{ termsPage.url }}" class="nav__link">{{ termsPage.title }}</a></li>
+                                {% endif %}
+
+                                {% set cookiePage = craft.entries.section('cookiePolicy').first() %}
+                                {% if cookiePage %}
+                                    <li><a href="{{ cookiePage.url }}" class="nav__link">{{ cookiePage.title }}</a></li>
+                                {% endif %}
+                                {% if socialMedia.facebook or socialMedia.instagram or socialMedia.linkedin or socialMedia.pinterest or socialMedia.twitter or socialMedia.youtube or socialMedia.google %}
+                                    <li>
+                                        <div class="nav nav--social">
+                                            <ul>
+                                            {% include '_snippet/_content/_socialMedia' %}
+                                            </ul>
+                                        </div>
+                                    </li>
+                                {% endif %}
+
+                                {#{% if socialMedia.facebook or socialMedia.instagram or socialMedia.linkedin or socialMedia.pinterest or socialMedia.twitter or socialMedia.youtube or socialMedia.google %}#}
+                                    {#<li>{{ 'Volg ons'|t }}</li>#}
+                                {#{% endif %}#}
+                            </ul>
+                        </nav>
                         <p class="page-footer__copyright">&copy; {{ now.year }} {{ siteName }} - Website by <a href="https://www.statik.be">Statik</a></p>
                     </div>
                     <div class="grid__12 grid--bp-sml__6">
                         <div class="pull--bp-sml--right">
-                            <nav class="nav nav--footer">
-                                <ul>
-                                    {% set privacyPage = craft.entries.section('privacy').first() %}
-                                    {% if privacyPage %}
-                                        <li><a href="{{ privacyPage.url }}" class="nav__link">{{ privacyPage.title }}</a></li>
-                                    {% endif %}
-
-                                    {% set termsPage = craft.entries.section('termsConditions').first() %}
-                                    {% if termsPage %}
-                                        <li><a href="{{ termsPage.url }}" class="nav__link">{{ termsPage.title }}</a></li>
-                                    {% endif %}
-
-                                    {% set cookiePage = craft.entries.section('cookiePolicy').first() %}
-                                    {% if cookiePage %}
-                                        <li><a href="{{ cookiePage.url }}" class="nav__link">{{ cookiePage.title }}</a></li>
-                                    {% endif %}
-
-                                    {% if socialMedia.facebook or socialMedia.instagram or socialMedia.linkedin or socialMedia.pinterest or socialMedia.twitter or socialMedia.youtube %}
-                                        <li>{{ 'Volg ons'|t }}</li>
-                                    {% endif %}
-                                </ul>
-                            </nav>
-                            {% if socialMedia.facebook or socialMedia.instagram or socialMedia.linkedin or socialMedia.pinterest or socialMedia.twitter or socialMedia.youtube %}
-                                <div class="nav nav--social">
-                                    <ul>
-                                        {% include '_snippet/_content/_socialMedia' %}
-                                    </ul>
-                                </div>
+                            {% set images = craft.entries.section('footer')%}
+                            {% if images|length %}
+                                {% for image in images%}
+                                    {#{% include '_snippet/_content/_image' %}#}
+                                {% endfor %}
                             {% endif %}
                         </div>
                     </div>

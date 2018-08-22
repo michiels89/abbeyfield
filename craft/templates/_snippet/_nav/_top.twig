@@ -1,10 +1,27 @@
 {% if craft.amNav.getNavRaw("topNav") is defined %}
+    <script type="text/javascript">
+        (function ($) {
+            $().ready(function () {
+                $('body').jfontsize({
+                    btnMinusClasseId: '#jfontsize-minus',
+                    btnDefaultClasseId: '#jfontsize-default',
+                    btnPlusClasseId: '#jfontsize-plus',
+                    btnMinusMaxHits: 5,
+                    btnPlusMaxHits: 5,
+                    sizeChange: 2
+                });
+            });
+        })(jQuery)
+    </script>
     <nav class="nav nav--top cf">
         <ul>
+            <li><a class="size-select" id="jfontsize-minus">A-</a></li>
+            <li><a class="size-select" id="jfontsize-plus">A+</a></li>
             {% set nav = craft.amNav.getNavRaw("topNav") %}
             {% for node in nav %}
-                <li><a href="{{ node.url }}" class="{{ globalMacro.is_active(node.url) }} {{ node.listClass }}" {% if node.blank %} target="_blank"{% endif %}>{{ node.name }}</a></li>
+                <li><a href="{{ node.url }}" class="{{ globalMacro.is_active(node.url) }} {{ node.listClass }}" {% if node.blank %} target="_blank"{% endif %}>{{ node.name }}</a></li><span></span>
             {% endfor %}
+
         </ul>
     </nav>
 {% endif %}

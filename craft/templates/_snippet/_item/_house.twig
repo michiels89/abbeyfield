@@ -1,0 +1,23 @@
+<div class="grid__item container">
+    <div class=" grid ">
+        <div class="grid__12 grid--bp-med__2">
+            {% if house.overviewImage|length %}
+                <div class="card__img">
+                    <a href="{{ house.getUrl() }}" class="card card--news">
+                        {{ assets.renderSrcset(house.overviewImage, 'grid__12') }}
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="grid__12 grid--bp-med__8">
+            <div class="card__main ">
+                <a href="{{ house.getUrl() }}" class="card card--news">
+                    {#<div class="card__meta">{{ newsEntry.postDate.format('d.m.Y') }}</div>#}
+                    <h3 class="card__title">{{ house.overviewTitle ? house.overviewTitle : house.title }}</h3>
+                    <p>{{ house.overviewDescription ? house.overviewDescription : house.overviewDescription}}</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

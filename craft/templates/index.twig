@@ -19,7 +19,9 @@
                          <div class="introHome">
                             {% include '_snippet/_content/_intro' %}
                          </div>
-                        <h2 class="spacer">{{ 'Nieuws'|t }}</h2>
+                        <div class="grid">
+                            <div class="grid__12 grid--bp-med__6" >
+                        <h2 class="spacer  news_title">{{ 'Nieuws'|t }}</h2>
                         <div class="spacer--xsm grid grid--bp-med-1-col">
     {% endif %}
 
@@ -33,10 +35,16 @@
                         {% set overview = craft.entries.section('newsOverview').first() %}
 
                         {% if overview and otherNews|length > 5 %}
-                            <div class="spacer--xlr ">
-                                <a href="{{ overview.url }}" class="btn">{{ "Alle nieuws"|t }}</a>
+                            <div class="spacer--xlr" style="margin-top: 25px; padding: 10px;">
+                                <a href="{{ overview.url }}" class="btn">{{ "ALLE NIEUWS"|t }}<span></span></a>
                             </div>
                         {% endif %}
+                            </div>
+                           <div class="grid__12 grid--bp-med__6">
+                               {% set image = entry.images %}
+                                    {% include '_snippet/_content/_image' %}
+                           </div>
+                        </div>
                     </div>
                 </div>
             </div>

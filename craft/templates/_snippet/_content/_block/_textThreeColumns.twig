@@ -13,6 +13,15 @@
                 <h2>{{ block.titel }}</h2>
                 {{ block.textColumn1 }}
             </div>
+            <div class="spacer">
+                {% if block.cta|length %}
+                    <div class="inline">
+                        {% for cta in block.cta.find() %}
+                            {% include '_snippet/_content/_block/_cta' %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
             {#{% if block.ctasColumnOne|length %}#}
                 {#<div class="{{ block.alignment }} spacer">#}
                     {#<div class="inline">#}
@@ -28,6 +37,15 @@
                 <h2>{{ block.titel2 }}</h2>
                 {{ block.textColumn2 }}
             </div>
+            <div class="spacer">
+                {% if block.cta2|length %}
+                    <div class="inline">
+                        {% for cta in block.cta2.find() %}
+                            {% include '_snippet/_content/_block/_cta' %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
             {#{% if block.ctasColumnTwo|length %}#}
                 {#<div class="{{ block.alignment }} spacer">#}
                     {#<div class="inline">#}
@@ -42,6 +60,15 @@
             <div class="spacer">
                 <h2>{{ block.titel3 }}</h2>
                 {{ block.textColumn3 }}
+            </div>
+            <div class="spacer">
+                {% if block.cta3|length %}
+                    <div class="inline">
+                        {% for cta in block.cta3.find() %}
+                            {% include '_snippet/_content/_block/_cta' %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
             </div>
             {#{% if block.ctasColumnThree|length %}#}
                 {#<div class="{{ block.alignment }} spacer">#}
