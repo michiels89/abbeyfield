@@ -1,0 +1,42 @@
+
+<div class="asideNav">
+    <div class="upperAside">
+        {% if about is defined %}
+            {{ craft.amNav.getNav("aside") }}
+        {% endif %}
+
+        {% if inhabitant is defined %}
+            {{ craft.amNav.getNav("asidebewoners") }}
+        {% endif %}
+
+        {% if house is defined %}
+            {{ craft.amNav.getNav("asidehouses") }}
+        {% endif %}
+
+        {% if contact is defined %}
+            {{ craft.amNav.getNav("asidecontact") }}
+        {% endif %}
+        {% if news is defined %}
+            <li>
+                <a href="{{siteUrl}}nieuws">Nieuws</a>
+            </li>
+        {% endif %}
+    </div>
+    <ul class="lowerAside">
+        {% if news is not defined %}
+            <li>
+                <div>Laatste Nieuws</div>
+                <a href="{{siteUrl}}nieuws">van/over Abbeyfield</a>
+            </li>
+        {% endif %}
+
+        <li>
+            <div>Doe Mee</div>
+            <a href="{{siteUrl}}over-abbeyfield/doe-mee">Als vrijwilliger, als partner of met een gift</a>
+        </li>
+        <li class="colored">
+            <div>Vragen?</div>
+            <a href="{{siteUrl}}veelgestelde-vragen">Bekijk onze 'veelgestelde vragen'</a>
+        </li>
+    </ul>
+</div>

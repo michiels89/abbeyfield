@@ -12,7 +12,7 @@
     <div class="container">
         <div class="grid">
             <div class="grid__12 grid--bp-med__3">
-                {{ craft.amNav.getNav("assidehouses") }}
+                {% include '_asideNav' with {'news': false} %}
             </div>
             <div class="grid__12 grid--bp-med__9">
                 <div class="section section--default">

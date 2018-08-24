@@ -1,7 +1,7 @@
-{% if craft.amNav.getNavRaw("asside") is defined %}
+{% if craft.amNav.getNavRaw("aside") is defined %}
     <nav class="nav nav--top cf">
         <ul>
-            {% set nav = craft.amNav.getNavRaw("asside") %}
+            {% set nav = craft.amNav.getNavRaw("aside") %}
             {% for node in nav %}
                 <li><a href="{{ node.url }}" class="{{ globalMacro.is_active(node.url) }} {{ node.listClass }}" {% if node.blank %} target="_blank"{% endif %}>{{ node.name }}</a></li>
             {% endfor %}

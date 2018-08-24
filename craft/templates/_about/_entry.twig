@@ -9,8 +9,8 @@
 {% block content %}
     <div class="container about">
         <div class="grid">
-            <div class="grid__12 grid--bp-med__2">
-                {{ craft.amNav.getNav("asside") }}
+            <div class="grid__12 grid--bp-med__3">
+                {% include '_asideNav' with {'about': true} %}
             </div>
             <div class="grid__12 grid--bp-med__9">
                 <div class="section section--default">

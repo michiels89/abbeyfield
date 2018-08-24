@@ -114,6 +114,59 @@
   }
 }
 
+// Veelgestelde vragen overzicht
+
+.question{
+
+  .wrapper{
+
+    border-bottom: solid 1px #eee;
+
+    a{
+      color: $color-primary;
+      font-weight: 500;
+      font-size: 1.2em;
+      display: block;
+      padding: 20px 15px;
+      span{
+        width: 0px;
+        height: 0px;
+        display: inline-block;
+        border: solid 8px #cccccc;
+        border-color: transparent transparent transparent #cccccc;
+        margin-right: 15px;
+      }
+    }
+    div{
+      display: none;
+    }
+
+
+  }
+  .wrapper:active{
+
+
+    span{
+      width: 0px;
+      height: 0px;
+      display: inline-block;
+      border: solid 8px #17467b;
+      border-color: #17467b transparent transparent transparent;
+      margin-left: -6px;
+      margin-right: 21px;
+      margin-bottom: -4px;
+    }
+    div{
+      display: block;
+      padding-bottom: 30px;
+      padding-left: 50px;
+    }
+
+  }
+
+}
+
+
 
 
 

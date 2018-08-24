@@ -13,7 +13,7 @@
         <div class="container">
             <div class="section__content">
                 <div class="grid">
-                    <div class="grid__12 grid--bp-sml__6">
+                    <div class="grid__12 grid--bp-sml__4">
                         <nav class="nav nav--footer">
                             <ul>
                                 {% set privacyPage = craft.entries.section('privacy').first() %}
@@ -30,15 +30,6 @@
                                 {% if cookiePage %}
                                     <li><a href="{{ cookiePage.url }}" class="nav__link">{{ cookiePage.title }}</a></li>
                                 {% endif %}
-                                {% if socialMedia.facebook or socialMedia.instagram or socialMedia.linkedin or socialMedia.pinterest or socialMedia.twitter or socialMedia.youtube or socialMedia.google %}
-                                    <li>
-                                        <div class="nav nav--social">
-                                            <ul>
-                                            {% include '_snippet/_content/_socialMedia' %}
-                                            </ul>
-                                        </div>
-                                    </li>
-                                {% endif %}
 
                                 {#{% if socialMedia.facebook or socialMedia.instagram or socialMedia.linkedin or socialMedia.pinterest or socialMedia.twitter or socialMedia.youtube or socialMedia.google %}#}
                                     {#<li>{{ 'Volg ons'|t }}</li>#}
@@ -47,15 +38,29 @@
                         </nav>
                         <p class="page-footer__copyright">&copy; {{ now.year }} {{ siteName }} - Website by <a href="https://www.statik.be">Statik</a></p>
                     </div>
-                    <div class="grid__12 grid--bp-sml__6">
-                        <div class="pull--bp-sml--right">
-                            {% set images = craft.entries.section('footer')%}
-                            {% if images|length %}
-                                {% for image in images%}
+                    <div class="grid__12 grid--bp-sml__4">
+                        {% if socialMedia.facebook or socialMedia.instagram or socialMedia.linkedin or socialMedia.pinterest or socialMedia.twitter or socialMedia.youtube or socialMedia.google %}
+                                <div class="nav nav--social">
+                                    <ul>
+                                        {% include '_snippet/_content/_socialMedia' %}
+                                    </ul>
+                                </div>
+                        {% endif %}
+                    </div>
+                    <div class="grid__12 grid--bp-sml__2">
+                        <a href="https://www.vlaanderen.be/nl"> <img src="files/partners/SteunVlaamse_Overheid_6x4x72.jpg" alt=""></a>
+                        
+                        {#<div class="pull--bp-sml--right">#}
+                            {#{% set images = craft.entries.section('footer')%}#}
+                            {#{% if images|length %}#}
+                                {#{% for image in images%}#}
                                     {#{% include '_snippet/_content/_image' %}#}
-                                {% endfor %}
-                            {% endif %}
-                        </div>
+                                {#{% endfor %}#}
+                            {#{% endif %}#}
+                        {#</div>#}
+                    </div>
+                    <div class="grid__12 grid--bp-sml__2">
+                        <a href="https://www.kbs-frb.be/start.aspx?q=/"> <img src="files/partners/KBSB_logo_NDLS_6x4x72.jpg" alt=""></a>
                     </div>
                 </div>
             </div>

@@ -48,8 +48,12 @@
       font: bold 20px sans-serif;
       color: $color-primary !important;
     }
-    li:last-child{
-      border: 5px solid black;
+    li .fr {
+      border-left: 1px solid lightgrey;
+      padding-left : 15px;
+      a{
+        color: $gray-0;
+      }
     }
     a {
       @include link-variant($color-text, $color-primary);
@@ -103,7 +107,7 @@
     @extend %ext-default-nav;
     @extend %ext-horizontal-nav;
     @include cf;
-    margin-top: -4px;
+    //margin-top: -4px;
     display: inline-block;
     &__title {
       float: left;
@@ -259,5 +263,77 @@
 
   &--tabs {
     margin-bottom: $rh-sml;
+  }
+}
+.asideNav{
+
+  margin: 30px;
+
+  .upperAside{
+    padding-bottom: 25px;
+
+    ul{
+      margin:0;
+      padding: 0;
+    }
+
+    li{
+      display: inline;
+      margin: 0;
+      padding: 0;
+      line-height: normal;
+      //text-decoration: none;
+    }
+
+    a{
+    display: block;
+    background-color: #f2f2f2;
+    padding: 10px 10px;
+    margin-bottom: 1px;
+    color: #17467b;
+    text-decoration: none;
+    }
+    a:hover{
+      background-color: #D4D4D4;
+    }
+
+    a:active, a:focus{
+      background-color: #e95d0f;
+      color: #fff;
+    }
+
+  }
+  .lowerAside{
+    margin: 0;
+    padding: 0;
+
+    li{
+      display: inline-block;
+      margin: 0;
+      padding: 20px;
+      line-height: normal;
+      border-top: 1px solid #f2f2f2;
+      border-bottom: 1px solid #f2f2f2;
+      text-align: center;
+      text-decoration: none;
+
+      div{
+        font-weight: bold;
+        color: $color-primary;
+      }
+        a{
+          text-decoration: underline;
+        }
+
+    }
+    .colored{
+      margin-top: 20px;
+      background-color: $color-secondary;
+      color: #fff;
+      a, div{
+        color: #fff;
+        text-decoration: none;
+      }
+    }
   }
 }

@@ -11,7 +11,7 @@
     <div class="container house">
         <div class="grid">
             <div class="grid__12 grid--bp-med__3">
-                {{ craft.amNav.getNav("assidehouses") }}
+                {% include '_asideNav' with {'house': true} %}
             </div>
             <div class="grid__12 grid--bp-med__9">
                 <div class="section section--default">
